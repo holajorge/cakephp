@@ -75,6 +75,16 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->fallbacks(DashedRoute::class);
 });
 
+// ruta para usuarios
+//Router::connect('/users/index', ['controller' => 'User', 'action' => 'index']);
+
+// grupo de rutas
+Router::scope('/users', function ($routes){
+
+    $routes->connect('/index', ['controller' => 'User', 'action' => 'index']);
+    $routes->connect('/view/*', ['controller' => 'User', 'action' => 'view']);
+
+});
 /**
  * Load all plugin routes. See the Plugin documentation on
  * how to customize the loading of plugin routes.
