@@ -1,11 +1,35 @@
 <?php
 namespace App\Controller;
 
+use  App\Controller\AppController;
 /**
  * User Controller
  *
  */
 class UsersController extends AppController {
+
+
+	public function login()
+	{
+		
+		if($this->request->is('post')) 
+		{
+			
+			$user = $this->Auth->identify();
+			
+			if ($user) {
+				$this->Auth->setUser($user);
+				return $this->redirect($this->Auth->redirectUrl());
+			}else{
+				$this->Flash->error('datos invalidos, porfavor intente nuevamente', ['key' => 'auth']);
+			}
+		}
+	}
+
+	public function home()
+	{
+		$this->render();
+	}
 
 	public function index() {
 
@@ -20,9 +44,6 @@ class UsersController extends AppController {
 
 		if ($this->request->is('post')) {
 			$user = $this->Users->patchEntity($user, $this->request->data);
-
-			// $user->role = 'user';
-			// $user->active = 1;
 			if ($this->Users->save($user)) {
 				$this->Flash->success('El usuario ha sido creado correctamente.');
 				return $this->redirect(['controller' => 'Users', 'action' => 'index']);
