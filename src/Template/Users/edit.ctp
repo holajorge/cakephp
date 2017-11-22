@@ -2,13 +2,13 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <div class="page-header">
-            <h2>Crear usuario</h2>
+            <h2>Editar usuario</h2>
         </div>
         <?= $this->Form->create($user, ['novalidate']) ?>
         <fieldset>
-         <?= $this->element('users/fields') ?>
+            <?= $this->element('users/fields') ?>
         </fieldset>
-        <?= $this->Form->button('Crear', ['class' => 'btn btn-mg btn-primary']) ?>
+        <?= $this->Form->button('Editar', ['class' => 'btn btn-mg btn-primary']) ?>
         <?= $this->Form->end() ?>
     </div>
 </div>

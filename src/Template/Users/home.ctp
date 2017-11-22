@@ -1,1 +1,1 @@
-<h2>Bienvenido</h2>
+<h2>Bienvenido <?= $current_user['first_name']?></h2>

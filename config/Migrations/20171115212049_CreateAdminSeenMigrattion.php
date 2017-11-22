@@ -3,7 +3,7 @@ use Cake\Auth\DefaultPasswordHasher;
 use Migrations\AbstractMigration;
 
 //lap
-require_once 'C:/Users/HoloMundo/Desktop/myappcake/vendor/fzaninotto/faker/src/autoload.php';
+require_once 'C:/Users/holamundo/Desktop/cakephp/vendor/fzaninotto/faker/src/autoload.php';
 
 //pc
 // require_once 'C:\Users\holamundo\Desktop\cakephp\vendor\fzaninotto\faker\src\autoload.php';
@@ -25,10 +25,7 @@ class CreateAdminSeenMigrattion extends AbstractMigration {
 
 			'first_name' => 'jorge',
 			'email' => 'jorge@gmail.com',
-			'password' => function () {
-				$hasher = new DefaultPasswordHasher();
-				return $hasher->hash('secret');
-			},
+			'password' => 'jorge123',
 			'role' => 'admin',
 			'active' => 1,
 			'created' => function () use ($faker) {

@@ -3,7 +3,7 @@ use Cake\Auth\DefaultPasswordHasher;
 use Migrations\AbstractMigration;
 
 //lap
-require_once 'C:/Users/HoloMundo/Desktop/myappcake/vendor/fzaninotto/faker/src/autoload.php';
+require_once 'C:/Users/holamundo/Desktop/cakephp/vendor/fzaninotto/faker/src/autoload.php';
 
 //pc
 // require_once 'C:\Users\holamundo\Desktop\cakephp\vendor\fzaninotto\faker\src\autoload.php';
@@ -30,10 +30,7 @@ class CreateDataSeedMigration extends AbstractMigration {
 			'email' => function () use ($faker) {
 				return $faker->safeEmail();
 			},
-			'password' => function () {
-				$hasher = new DefaultPasswordHasher();
-				return $hasher->hash('secret');
-			},
+			'password' => 'hola123',
 			'role' => 'user',
 			'active' => function () {
 				return rand(0, 1);

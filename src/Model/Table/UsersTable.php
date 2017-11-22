@@ -51,21 +51,20 @@ class UsersTable extends Table {
 	public function validationDefault(Validator $validator) {
 		$validator
 			->integer('id')
-			->allowEmpty('id', 'create');
+			->notEmpty('id', 'create');
 
 		$validator
-			->scalar('first_name')
 			->requirePresence('first_name', 'create')
-			->notEmpty('first_name');
+			->notEmpty('first_name', 'nombre necesario');
 
 		$validator
 			->add('email', 'valid', ['rule' => 'email', 'message' => 'Ingrese un correo electrónico válido.'])
 			->requirePresence('email', 'create')
-			->notEmpty('email', 'Rellene este campo');
+			->notEmpty('email', 'correo necesario');
 
 		$validator
 			->requirePresence('password', 'create')
-			->notEmpty('password', 'Rellene este campo', 'create');
+			->notEmpty('password', 'password necesario', 'create');
 
 		$validator
 			->scalar('role')
@@ -87,9 +86,26 @@ class UsersTable extends Table {
 	 * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
 	 * @return \Cake\ORM\RulesChecker
 	 */
+
 	public function buildRules(RulesChecker $rules) {
-		$rules->add($rules->isUnique(['email']));
+
+		$rules->add($rules->isUnique(['email'], 'ya existe un usuario con este correo'));
 
 		return $rules;
+	}
+	public function findAuth(\Cake\ORM\Query $query, array $options)
+	{
+
+		$query
+			->select(['id', 'first_name', 'email', 'password', 'role'])
+			->where(['Users.active' => 1]);
+
+		return $query;
+	}
+
+	public function recoverPassword($id)
+	{
+		$user = $this->get($id);
+		return $user->password;
 	}
 }
