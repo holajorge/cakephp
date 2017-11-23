@@ -43,15 +43,19 @@ proceso 15 de noviembre de 2017
  	bin/cake bake controller User              
 ```
 
-finalizando con la creacion de grupo de turas y rutas estaticas y vincular la ruta a un metodo de controller con parametros 
+>finalizando con la creacion de grupo de turas y rutas estaticas y vincular la ruta a un metodo de controller con parametros 
 
-Creación de registros en CakePHP 3
+## Creación de registros en CakePHP 3
 
-Para crear una vista con los datos de una tabla con bake desde la línea de comandos
+>Para crear una vista con los datos de una tabla con bake desde la línea de comandos
+
+```
 bin/cake bake template Users add
+```
+
 mas
-[como guardar datos](http://book.cakephp.org/3.0/en/orm/saving-data.html).
+[http://book.cakephp.org/3.0/en/orm/saving-data.html](http://book.cakephp.org/3.0/en/orm/saving-data.html).
 
-– Conoce también con profundidad acerca de los Helpers en CakePHP 3
+>Conoce también con profundidad acerca de los Helpers en CakePHP 3
 
-[mas sobre helpers](http://book.cakephp.org/3.0/en/views/helpers.html).
+[http://book.cakephp.org/3.0/en/views/helpers.html](http://book.cakephp.org/3.0/en/views/helpers.html).
