@@ -1,10 +1,9 @@
 
-cakephp 3
+#cakephp 3
 
+##Installation
 
-Installation
-
-Download Composer or update composer self-update.
+>Download Composer or update composer self-update.
 Run php composer.phar create-project --prefer-dist cakephp/app [app_name].
 If Composer is installed globally, run
 
@@ -31,7 +30,6 @@ creacion de controllers
 
 finalizando con la creacion de grupo de turas y rutas estaticas y vincular la ruta a un metodo de controller con parametros 
 
-*******************************************************************
 Creación de registros en CakePHP 3
 
 Para crear una vista con los datos de una tabla con bake desde la línea de comandos
